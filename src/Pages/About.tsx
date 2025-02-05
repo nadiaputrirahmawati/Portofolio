@@ -4,8 +4,8 @@ export const About = () => {
     return (
         <section id="about" className="bg-secondary pt-2 ">
             <div>
-                <div className="container mx-auto flex flex-col lg:flex-row items-center gap-20 px-4 lg:px-6">
-                    <div className="relative mt-16 lg:mt-20 mb-20 w-[18rem] sm:w-[20rem] lg:w-[30rem] h-[29rem] sm:h-[20rem] lg:h-[33rem] shadow-lg  p-4 rounded-lg z-10">
+                <div className="container mx-auto flex flex-col lg:flex-row items-center gap-20 px-4 lg:px-9">
+                    <div className="relative mt-16 lg:mt-20 mb-20 w-[18rem] sm:w-[20rem] lg:w-[25rem] h-[28rem] sm:h-[20rem] lg:h-[29rem] shadow-lg  p-4 rounded-lg z-10">
                         <div className="absolute top-0 left-0 w-full h-full  -z-40 rounded-lg" style={{backgroundColor: '#FBF8EF'}}></div>
                         <div className="relative">
                             <img
