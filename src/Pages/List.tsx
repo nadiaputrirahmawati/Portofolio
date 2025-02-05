@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
-import axios from 'axios';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import api from '../Service/api';
 
 interface Category {
     id_category: string;
@@ -19,7 +19,7 @@ const ImageSlider: React.FC = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/category/data");
+                const response = await api.get("category/data");
                 if (response.data.success) {
                     setCategories(response.data.data);
                 }
@@ -87,7 +87,7 @@ const ImageSlider: React.FC = () => {
                                 <div className="bg-secondary rounded-t-full text-center w-60 mb-4 lg:w-48 shadow-xl h-56">
                                     <div className="flex justify-center items-center mb-4">
                                         <img
-                                            src={`http://127.0.0.1:8000/storage/${category.icons}`}
+                                            src={`https://adminportfolio.nadp.my.id/storage/${category.icons}`}
                                             className="w-16 h-16 object-contain mt-10"
                                             alt={category.name}
                                         />

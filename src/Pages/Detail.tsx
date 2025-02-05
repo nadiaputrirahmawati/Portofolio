@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import api from "../Service/api";
 
 const Detail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -10,7 +11,7 @@ const Detail: React.FC = () => {
     useEffect(() => {
         const fetchPortfolioDetail = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/portfolio/detail/${slug}`);
+                const response = await api.get(`portfolio/detail/${slug}`);
                 if (response.data.success) {
                     setPortfolioDetail(response.data.data);
                 }
@@ -43,7 +44,7 @@ const Detail: React.FC = () => {
                     </h1>
                     <div className="flex justify-center items-center mt-5">
                         <img
-                            src={`http://127.0.0.1:8000/storage/${portfolioDetail.image}`}
+                            src={`https://adminportfolio.nadp.my.id/storage/${portfolioDetail.image}`}
                             alt={portfolioDetail.title}
                             className="w-full h-auto max-w-4xl rounded-lg shadow-lg"
                         />

@@ -101,7 +101,7 @@ const Portfolio: React.FC = () => {
                             >
                                 {/* Gambar */}
                                 <img
-                                    src={`http://127.0.0.1:8000/storage/${item.image}`} // Path gambar
+                                    src={`https://adminportfolio.nadp.my.id/storage/${item.image}`} // Path gambar
                                     alt={item.title}
                                     className="w-full h-auto object-cover"
                                 />
