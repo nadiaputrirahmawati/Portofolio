@@ -1,6 +1,5 @@
 import { FaLinkedin } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
-import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
