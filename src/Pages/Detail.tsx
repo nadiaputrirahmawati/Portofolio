@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import api from "../Service/api";
 
 const Detail: React.FC = () => {
+
     const { slug } = useParams<{ slug: string }>();
     const [portfolioDetail, setPortfolioDetail] = useState<any>(null);
 
@@ -27,6 +28,7 @@ const Detail: React.FC = () => {
     if (!portfolioDetail) {
         return <div>Loading...</div>;
     }
+
 
     return (
         <>
@@ -59,16 +61,15 @@ const Detail: React.FC = () => {
                         </a>
                     </h1>
                 </div>
-                <div className="card w-full lg:w-7/12 lg:ml-auto h-screen pr-4 mt-10 lg:mt-10">
+                <div className="card w-full lg:w-7/12 lg:ml-auto h-screen pr-4 mt-10 lg:mt-10 mb-10">
                     <div className="px-4 text-black">
                         <div className="border border-gray-500 p-6 w-full rounded-lg shadow-md">
-                            <div className="h-[200px] overflow-y-auto">
+                            <div>
                                 <h1 className="text-lg bg-secondary w-14 text-center rounded-full text-white">
                                     {portfolioDetail.category.name}
                                 </h1>
-                                <p className="text-justify text-sm mt-2 leading-relaxed">
-                                    {portfolioDetail.descriptions}
-                                </p>
+                                <p className="text-justify text-sm mt-2 leading-relaxed" dangerouslySetInnerHTML={{ __html: portfolioDetail.descriptions }} />
+
                             </div>
                         </div>
                     </div>
