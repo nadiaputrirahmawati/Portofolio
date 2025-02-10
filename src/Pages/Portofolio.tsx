@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaLink } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
 import api from "../Service/api"; // Import the configured axios instance
 
 interface PortfolioItem {
@@ -77,9 +75,9 @@ const Portfolio: React.FC = () => {
                         {["All", ...categories.map(category => category.name)].map((category) => (
                             <button
                                 key={category}
-                                className={`px-2 py-2 rounded-full w-auto lg:w-32 ${filter === category
-                                        ? "bg-blue-400 text-white"
-                                        : "bg-slate-100 border-secondary border-2 text-gray-700"
+                                className={`px-2 py-2 rounded-full w-32 h-12 lg:w-32 ${filter === category
+                                    ? "bg-blue-400 text-white"
+                                    : "bg-slate-100 border-secondary border-2 text-gray-700"
                                     } hover:bg-secondary`}
                                 onClick={() => setFilter(category)}
                             >
@@ -95,31 +93,29 @@ const Portfolio: React.FC = () => {
                         <p>No portfolio items available.</p>
                     ) : (
                         filteredItems.map((item) => (
-                            <div
-                                key={item.id_portofolio}
-                                className="relative group bg-white rounded-lg shadow-lg overflow-hidden"
-                            >
-                                {/* Gambar */}
-                                <img
-                                    src={`https://adminportfolio.nadp.my.id/storage/${item.image}`} // Path gambar
-                                    alt={item.title}
-                                    className="w-full h-auto object-cover"
-                                />
+                            <div className="relative max-w-sm  rounded-xl p-4 shadow-lg overflow-hidden" key={item.id_portofolio}>
+                                <a href={item.url}>
+                                    <div className="rounded-lg overflow-hidden">
+                                        {/* <h2 className="text-xl text-center font-bold mb-2 text-slate-600 w-60">{item.title}</h2> */}
+                                        <img
+                                            src={`https://adminportfolio.nadp.my.id/storage/${item.image}`}
+                                            alt="Card Preview"
+                                            className="w-full h-48 object-cover"
+                                        />
+                                    </div>
+                                    <div className=" w-full ">
+                                        <a href={`project/${item.slug}`} className="text-black bg-secondary mt-4 font-semibold flex items-center justify-center py-2 rounded-full hover:bg-blue-400 transition">
+                                            Read More <span className="ml-2">↗</span>
+                                        </a>
+                                    </div>
+                                </a>
 
-                                <div className="group-hover:opacity-100 absolute inset-0 mt-24 gap-4 ml-6 mr-6 bg-white bg-opacity-95 flex p-4 opacity-0 h-20 transition-opacity duration-300">
-                                    <h2 className="text-xl font-bold mb-2 text-slate-600 w-60">{item.title}</h2>
-                                    <a href={item.url} className="text-black">
-                                        <FaLink size={22} />
-                                    </a>
-                                    <a href={`project/${item.slug}`} className="text-black">
-                                        <FaPlus size={22} />
-                                    </a>
-
-                                </div>
                             </div>
+
                         ))
                     )}
                 </div>
+
             </div>
         </section>
     );

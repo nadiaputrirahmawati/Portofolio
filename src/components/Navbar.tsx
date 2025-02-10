@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div>
             <a className="w-40">
-              <img src={gambar} alt="Logo" className="w-44 h-auto" />
+              <img src={gambar} alt="Logo" className="w-32 h-auto pl-4" />
             </a>
           </div>
 

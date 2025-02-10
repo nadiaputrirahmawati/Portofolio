@@ -8,7 +8,7 @@ export const Footer = () => {
         <footer className="bg-primary text-black pt-10 relative">
             <div className="absolute  left-1/2 transform -translate-x-1/2 bg-secondary border border-gray-300 rounded-2xl py-10 px-6 w-11/12 md:w-8/12 text-center shadow-lg">
                 <h2 className="text-2xl font-bold mb-4">Need a website?<br /> Let's build it together!</h2>
-                <button className="bg-yellow-500 text-white py-2 px-6 rounded-full hover:bg-yellow-600 transition">Get in touch</button>
+                <button className="bg-yellow-400 text-white py-2 px-6 rounded-full hover:bg-yellow-600 transition">Get in touch</button>
             </div>
             <div className="bg-white text-black py-20 mt-40 lg:mt-24">
                 <p className="text-center mb-6">Let's connect!</p>
